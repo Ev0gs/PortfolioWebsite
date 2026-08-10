@@ -195,7 +195,7 @@ const ProjectsSection = () => {
             tagColor: "#00FF9C",
             desc: t("projects.items.timetoplay.desc"),
             image: "/timetoplay.png",
-            links: { github: null, live: "https://timetoplay.com" },
+            links: { github: null, live: "https://www.time-to-play.fr/" },
             featured: false,
         },
         {
