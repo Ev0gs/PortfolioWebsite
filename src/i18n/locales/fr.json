@@ -4,8 +4,7 @@
     "skills": "Compétences",
     "services": "Services",
     "projects": "Projets",
-    "contact": "Contact",
-    "hire": "M'engager"
+    "contact": "Contact"
   },
   "hero": {
     "hello": "// Hello, world",
