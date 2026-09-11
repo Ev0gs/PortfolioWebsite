@@ -1,4 +1,3 @@
-// src/sections/ProjectsSection.tsx
 import {useRef, useState} from "react";
 import {motion, useInView} from "motion/react";
 import {ArrowRight, BookMarked, ExternalLink, Zap} from "lucide-react";
@@ -62,7 +61,7 @@ function ProjectCard({ project, delay, index }: { project: Project; delay: numbe
                             boxShadow: hovered ? `0 0 30px ${project.tagColor}18` : "none",
                         }}
                     >
-                        <div className="relative h-44 overflow-hidden">
+                        <div className="relative h-60 overflow-hidden">
                             <img
                                 src={project.image}
                                 alt={project.title}
@@ -165,6 +164,20 @@ const ProjectsSection = () => {
     const { t } = useTranslation()
 
     const PROJECTS: Project[] = [
+        {
+            id: "wax",
+            title: "WAX",
+            type: t("projects.items.wax.type"),
+            tag: "React Native / Expo / Supabase",
+            tagColor: "#F5A623",
+            desc: t("projects.items.wax.desc"),
+            image: "/wax.png",
+            links: {
+                github: "https://github.com/Ev0gs/WaxApp",
+                live: null
+            },
+            featured: false,
+        },
         {
             id: "nexus-engine",
             title: "NexusEngine",

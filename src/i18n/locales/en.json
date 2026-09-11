@@ -89,6 +89,10 @@
     "liveDemo": "Website",
     "featured": "featured",
     "items": {
+      "wax": {
+        "type": "Mobile Application",
+        "desc": "A mobile vinyl record collection app built for collectors. Search via the Discogs API, barcode scanning, image carousel, tracklist and collection stats."
+      },
       "nexusengine": {
         "type": "3D Game Engine",
         "desc": "Custom C++ game engine built around an ECS architecture with OpenGL 3.3+ rendering, rigid body physics, and a playable survival shooter sample demonstrating the full pipeline."

@@ -90,6 +90,10 @@
     "liveDemo": "Site web",
     "featured": "vedette",
     "items": {
+      "wax": {
+        "type": "Application Mobile",
+        "desc": "Bibliothèque de vinyles mobile pensée pour les collectionneurs. Recherche via l'API Discogs, scan de code-barre, carousel d'images, tracklist et stats de collection."
+      },
       "nexusengine": {
         "type": "Moteur de jeu 3D",
         "desc": "Moteur de jeu C++ custom construit autour d'une architecture ECS avec rendu OpenGL 3.3+, rigid body physics, et un jeu de démonstration (survival shooter) illustrant le pipeline complet."
