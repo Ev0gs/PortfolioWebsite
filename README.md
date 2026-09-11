@@ -1,6 +1,6 @@
-# freelance-website
+# portfolio-website
 
-Personal freelance portfolio — built with React, Vite, TypeScript, and Tailwind CSS.
+Personal portfolio — built with React, Vite, TypeScript, and Tailwind CSS.
 
 ## Tech Stack
 
