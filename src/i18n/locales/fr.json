@@ -92,31 +92,66 @@
     "items": {
       "wax": {
         "type": "Application Mobile",
-        "desc": "Bibliothèque de vinyles mobile pensée pour les collectionneurs. Recherche via l'API Discogs, scan de code-barre, carousel d'images, tracklist et stats de collection."
+        "desc": "Bibliothèque de vinyles mobile pensée pour les collectionneurs. Recherche via l'API Discogs, scan de code-barre, carousel d'images, tracklist et stats de collection.",
+        "role": "Développeur solo — architecture, développement, déploiement",
+        "longDesc": "WAX est un projet mobile personnel développé pour les collectionneurs de vinyles, avec React Native et Expo. Il se connecte à l'API Discogs pour rechercher des disques, scanner des codes-barres, parcourir des carrousels d'images et des tracklists, et suivre des statistiques de collection. L'objectif était de construire une application mobile production-ready from scratch avec un fort focus sur l'UX et l'intégration de données réelles.",
+        "h1": "Intégration API Discogs — recherche de millions de vinyles, récupération des données album, tracklists et pochettes en temps réel",
+        "h2": "Scan de code-barre — scannez un vinyle physique pour l'identifier instantanément et l'ajouter à la collection",
+        "h3": "Stats de collection & carousel — vue d'ensemble visuelle de la collection avec statistiques et navigation dans les pochettes"
       },
       "nexusengine": {
         "type": "Moteur de jeu 3D",
-        "desc": "Moteur de jeu C++ custom construit autour d'une architecture ECS avec rendu OpenGL 3.3+, rigid body physics, et un jeu de démonstration (survival shooter) illustrant le pipeline complet."
+        "desc": "Moteur de jeu C++ custom construit autour d'une architecture ECS avec rendu OpenGL 3.3+, rigid body physics, et un jeu de démonstration (survival shooter) illustrant le pipeline complet.",
+        "role": "Développeur solo — architecture, rendu, physique, jeu de démo",
+        "longDesc": "NexusEngine est un projet personnel visant à comprendre les entrailles d'un moteur 3D temps réel. Plutôt que de s'appuyer sur des frameworks existants, l'objectif était de construire chaque couche from scratch — du pipeline de rendu à la simulation physique. Le projet inclut un survival shooter jouable comme validation complète du pipeline moteur.",
+        "h1": "Entity-Component System (ECS) — architecture orientée données pour l'efficacité cache et la modularité, avec séparation claire entre entités, composants et systèmes",
+        "h2": "Renderer OpenGL 3.3+ — pipeline custom avec gestion des shaders, VAO/VBO, chargement de textures et modèle d'éclairage de base, découplé de la logique de jeu",
+        "h3": "Physique à corps rigides — détection de collisions AABB, intégration de vélocité et réponse aux collisions, implémentée sans bibliothèque physique tierce"
       },
       "eokko": {
         "type": "Plateforme ERP",
-        "desc": "Un ERP multi-contexte développé sur Next.js. Ce produit vise à centraliser les données de plusieurs entreprises sur une seule plateforme pour faciliter la gestion commerciale."
+        "desc": "Un ERP multi-contexte développé sur Next.js. Ce produit vise à centraliser les données de plusieurs entreprises sur une seule plateforme pour faciliter la gestion commerciale.",
+        "role": "Développeur Fullstack & Référent technique — Kapsloc (Alternance)",
+        "longDesc": "Eokko est une plateforme ERP nouvelle génération conçue pour centraliser les données de plusieurs entreprises au sein d'une interface unifiée. Le principal défi était d'architecturer un système capable de supporter plusieurs contextes d'entreprise simultanément tout en gardant l'interface fluide et maintenable. Les modules clés ont été conçus avec un fort focus sur l'UX et la collaboration temps réel.",
+        "h1": "Kanban temps réel — gestion de tickets multi-utilisateurs synchronisée via WebSockets, permettant une collaboration fluide entre sessions sans rechargement de page",
+        "h2": "Navbar personnalisable — réorganisation par drag & drop, système de favoris personnels et regroupement en catégories parentes collapsibles pour chaque workflow utilisateur",
+        "h3": "Déploiement Kubernetes — infrastructure scalable avec pipeline CI/CD GitLab automatisant les builds, tests et déploiements en staging et production"
       },
       "timetoplay": {
         "type": "Plateforme de jeux mobiles",
-        "desc": "Un hub de mini-jeux hypercasuels développé sur Unity, centralisant les mini-jeux sur une seule plateforme avec des récompenses réelles à l'issue de compétitions entre joueurs. Disponible sur Android & iOS."
+        "desc": "Un hub de mini-jeux hypercasuels développé sur Unity, centralisant les mini-jeux sur une seule plateforme avec des récompenses réelles à l'issue de compétitions entre joueurs. Disponible sur Android & iOS.",
+        "role": "Chef de projet & Développeur Unity — Kapsloc (Alternance)",
+        "longDesc": "TimeToPlay est une plateforme mobile centralisant plusieurs mini-jeux hypercasuels au sein d'une interface unique. Les joueurs s'affrontent dans des sessions courtes et accessibles et remportent des récompenses réelles selon les résultats. Le projet a été livré de la conception à la production sur Android et iOS, en coordonnant une équipe de 5 développeurs sur l'ensemble du cycle.",
+        "h1": "Système de compétitions — compétitions en temps réel et par score entre joueurs avec classements dynamiques et attribution de récompenses réelles via PlayFab",
+        "h2": "Intégration PlayFab — backend complet pour les comptes joueurs, scores, classements et gestion des récompenses en temps réel",
+        "h3": "100+ téléchargements en 3 mois — livré dans les délais avec une équipe de 5 personnes, déployé et maintenu sur Android (Google Play) et iOS (App Store)"
       },
       "virtuallab": {
         "type": "Jeu VR",
-        "desc": "Un jeu en réalité virtuelle sur des expériences de laboratoire développé pour Meta Quest 2 & 3 sur Unity. Complétez des quêtes en suivant les instructions du narrateur dans des environnements de laboratoire immersifs."
+        "desc": "Un jeu en réalité virtuelle sur des expériences de laboratoire développé pour Meta Quest 2 & 3 sur Unity. Complétez des quêtes en suivant les instructions du narrateur dans des environnements de laboratoire immersifs.",
+        "role": "Développeur VR solo — commandé par EURL ECVAM (Commission Européenne)",
+        "longDesc": "Virtual Lab est une expérience VR éducative commandée par l'EURL ECVAM, laboratoire de référence de l'Union Européenne pour les alternatives aux tests sur animaux. Publiée gratuitement sur le Meta Quest Store, l'expérience cible les lycéens de 14 à 18 ans et les guide à travers des expériences de laboratoire réalistes via un professeur narrateur virtuel. Disponible en version VR (Meta Quest 2 & 3) et Desktop (Windows).",
+        "h1": "Commandé par l'EURL ECVAM (Commission Européenne) — outil pédagogique officiel promouvant l'éducation aux 3R (Remplacement, Réduction, Raffinement) et les alternatives aux tests sur animaux",
+        "h2": "Interactions de laboratoire immersives — culture cellulaire, microscopie, automatisation et évaluation chimique avec interactions VR physiques fidèles aux gestes réels",
+        "h3": "Double plateforme — version VR standalone (Meta Quest 2 & 3) et version Desktop (Windows), publiée gratuitement sur le Meta Quest Store"
       },
       "archivizvr": {
         "type": "Visualisation VR",
-        "desc": "Visualisation architecturale réaliste en réalité virtuelle développée sur Unreal Engine 5.1 pour Meta Quest 2, réalisée lors d'un stage chez Scissors In The Plug avec Blueprints et assets 3D."
+        "desc": "Visualisation architecturale réaliste en réalité virtuelle développée sur Unreal Engine 5.1 pour Meta Quest 2, réalisée lors d'un stage chez Scissors In The Plug avec Blueprints et assets 3D.",
+        "role": "Game Programmer (Stage) — Scissors In The Plug",
+        "longDesc": "ArchivizVR est un démonstrateur de visualisation architecturale temps réel en VR, développé en stage chez Scissors In The Plug, studio bordelais spécialisé en technologies immersives. Le principal défi était d'atteindre un niveau de fidélité visuelle élevé — matériaux photoréalistes, éclairage dynamique — tout en respectant les contraintes de performance strictes du hardware standalone Meta Quest 2.",
+        "h1": "VR standalone photoréaliste — environnements architecturaux haute fidélité avec matériaux PBR et éclairage dynamique, optimisés pour Meta Quest 2 sans PC",
+        "h2": "Fonctionnalités interactives en Blueprints & C++ — navigation dans les espaces architecturaux, points d'intérêt interactifs et manipulation d'éléments de scène",
+        "h3": "Optimisation UE5 VR — Lumen adapté pour le standalone, Nanite désactivé, réduction des draw calls et gestion des LOD pour maintenir un framerate stable sur Quest"
       },
       "findux": {
         "type": "Application de monitoring web",
-        "desc": "Application web de monitoring temps réel développée avec Django et Vue.js pour la Métropole de Bordeaux. Automatise l'intégration des applications via des pipelines GitLab et assiste le département intégration & supervision."
+        "desc": "Application web de monitoring temps réel développée avec Django et Vue.js pour la Métropole de Bordeaux. Automatise l'intégration des applications via des pipelines GitLab et assiste le département intégration & supervision.",
+        "role": "Développeur DevOps (Stage) — Bordeaux Métropole",
+        "longDesc": "FindUX est une application web interne développée pour le département intégration et exploitation de la Métropole de Bordeaux. Face à un parc applicatif croissant et des processus de déploiement manuels chronophages, l'objectif était de centraliser la supervision en temps réel et d'automatiser les pipelines d'intégration pour fiabiliser et accélérer les mises en production.",
+        "h1": "Dashboard de monitoring temps réel — interface Vue.js donnant aux équipes opérationnelles une visibilité instantanée sur l'état des déploiements, alertes et indicateurs de santé",
+        "h2": "Automatisation GitLab CI/CD — pipelines automatisant les phases de build, test et déploiement, réduisant les interventions manuelles et les risques d'erreur humaine",
+        "h3": "Scripts Ansible — automatisation de l'infrastructure Linux pour les tâches d'administration système récurrentes, faisant gagner un temps significatif aux équipes opérationnelles"
       }
     }
   },

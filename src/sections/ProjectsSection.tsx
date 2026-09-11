@@ -5,8 +5,10 @@ import SectionLabel from "../components/SectionLabel.tsx";
 import HoloScan from "@/components/HoloScan.tsx";
 import {useTilt} from "@/hooks/useTilt.ts";
 import { useTranslation } from "react-i18next"
+import ProjectModal from "@/components/ProjectModal.tsx";
 
 interface Project {
+    // Card
     id: string
     title: string
     type: string
@@ -16,9 +18,20 @@ interface Project {
     image: string
     links: { github: string | null; live: string | null }
     featured: boolean
+    // Modal
+    longDesc?: string
+    stack?: string[]
+    highlights?: string[]
+    role?: string
+    period?: string
 }
 
-function ProjectCard({ project, delay, index }: { project: Project; delay: number; index: number }) {
+function ProjectCard({ project, delay, index, onSelect }: {
+    project: Project
+    delay: number
+    index: number
+    onSelect: (project: Project) => void
+}) {
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: "-60px" })
     const [hovered, setHovered] = useState(false)
@@ -31,7 +44,8 @@ function ProjectCard({ project, delay, index }: { project: Project; delay: numbe
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay }}
-            className="h-full"
+            onClick={() => onSelect(project)}
+            className="h-full cursor-pointer"
         >
             <div style={{ perspective: "800px" }} className="h-full">
                 <motion.div
@@ -162,6 +176,7 @@ const ProjectsSection = () => {
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: "-80px" })
     const { t } = useTranslation()
+    const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null)
 
     const PROJECTS: Project[] = [
         {
@@ -172,11 +187,17 @@ const ProjectsSection = () => {
             tagColor: "#F5A623",
             desc: t("projects.items.wax.desc"),
             image: "/wax.png",
-            links: {
-                github: "https://github.com/Ev0gs/WaxApp",
-                live: null
-            },
+            links: { github: "https://github.com/Ev0gs/WaxApp", live: null },
             featured: false,
+            period: "2025 — Present",
+            role: t("projects.items.wax.role"),
+            longDesc: t("projects.items.wax.longDesc"),
+            stack: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL", "REST API"],
+            highlights: [
+                t("projects.items.wax.h1"),
+                t("projects.items.wax.h2"),
+                t("projects.items.wax.h3"),
+            ],
         },
         {
             id: "nexus-engine",
@@ -188,6 +209,15 @@ const ProjectsSection = () => {
             image: "/nexusengine.png",
             links: { github: "https://github.com/Ev0gs/NexusEngine", live: null },
             featured: false,
+            period: "2024 — Present",
+            role: t("projects.items.nexusengine.role"),
+            longDesc: t("projects.items.nexusengine.longDesc"),
+            stack: ["C++17", "OpenGL 3.3+", "GLFW", "GLM", "stb_image", "ECS", "Custom Physics"],
+            highlights: [
+                t("projects.items.nexusengine.h1"),
+                t("projects.items.nexusengine.h2"),
+                t("projects.items.nexusengine.h3"),
+            ],
         },
         {
             id: "eokko",
@@ -199,6 +229,15 @@ const ProjectsSection = () => {
             image: "/eokko.png",
             links: { github: null, live: "https://eokko.com" },
             featured: false,
+            period: "2024 — 2025",
+            role: t("projects.items.eokko.role"),
+            longDesc: t("projects.items.eokko.longDesc"),
+            stack: ["Next.js", "React", "TypeScript", "MongoDB", "Kubernetes", "Docker", "GitLab CI/CD", "Node.js", "WebSockets"],
+            highlights: [
+                t("projects.items.eokko.h1"),
+                t("projects.items.eokko.h2"),
+                t("projects.items.eokko.h3"),
+            ],
         },
         {
             id: "timetoplay",
@@ -210,6 +249,15 @@ const ProjectsSection = () => {
             image: "/timetoplay.png",
             links: { github: null, live: "https://www.time-to-play.fr/" },
             featured: false,
+            period: "2024 — 2025",
+            role: t("projects.items.timetoplay.role"),
+            longDesc: t("projects.items.timetoplay.longDesc"),
+            stack: ["Unity", "C#", "PlayFab", "Android", "iOS", "Agile / Scrum", "Codecks", "Git"],
+            highlights: [
+                t("projects.items.timetoplay.h1"),
+                t("projects.items.timetoplay.h2"),
+                t("projects.items.timetoplay.h3"),
+            ],
         },
         {
             id: "virtual-lab",
@@ -221,6 +269,15 @@ const ProjectsSection = () => {
             image: "/virtuallab.png",
             links: { github: null, live: null },
             featured: false,
+            period: "2024",
+            role: t("projects.items.virtuallab.role"),
+            longDesc: t("projects.items.virtuallab.longDesc"),
+            stack: ["Unity", "C#", "Meta XR SDK", "Meta Quest 2 & 3", "VR Standalone", "Git"],
+            highlights: [
+                t("projects.items.virtuallab.h1"),
+                t("projects.items.virtuallab.h2"),
+                t("projects.items.virtuallab.h3"),
+            ],
         },
         {
             id: "archiviz-vr",
@@ -232,6 +289,15 @@ const ProjectsSection = () => {
             image: "/archivizvr.png",
             links: { github: "https://gitlab.com/evogs/scissors-in-the-plug/archiviz-vr", live: null },
             featured: false,
+            period: "2023",
+            role: t("projects.items.archivizvr.role"),
+            longDesc: t("projects.items.archivizvr.longDesc"),
+            stack: ["Unreal Engine 5.1", "Blueprints", "C++", "Meta Quest 2", "VR Standalone", "Git"],
+            highlights: [
+                t("projects.items.archivizvr.h1"),
+                t("projects.items.archivizvr.h2"),
+                t("projects.items.archivizvr.h3"),
+            ],
         },
         {
             id: "findux",
@@ -243,12 +309,26 @@ const ProjectsSection = () => {
             image: "/findux.png",
             links: { github: null, live: null },
             featured: false,
+            period: "2022",
+            role: t("projects.items.findux.role"),
+            longDesc: t("projects.items.findux.longDesc"),
+            stack: ["Vue.js", "Django", "Python", "GitLab CI/CD", "Ansible", "Linux", "REST API", "Git"],
+            highlights: [
+                t("projects.items.findux.h1"),
+                t("projects.items.findux.h2"),
+                t("projects.items.findux.h3"),
+            ],
         },
     ]
+
+    const selectedProject = selectedProjectId
+        ? PROJECTS.find((p) => p.id === selectedProjectId) ?? null
+        : null
 
     return (
         <section id="projects" className="relative py-28 px-6" style={{ zIndex: 1 }}>
             <div className="max-w-6xl mx-auto">
+                {/* Titre */}
                 <motion.div
                     ref={ref}
                     initial={{ opacity: 0, y: 30 }}
@@ -265,12 +345,20 @@ const ProjectsSection = () => {
                     </h2>
                 </motion.div>
 
+                {/* Grille de projets */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {PROJECTS.map((p, i) => (
-                        <ProjectCard key={p.id} project={p} delay={i * 0.08} index={i} />
+                        <ProjectCard
+                            key={p.id}
+                            project={p}
+                            delay={i * 0.08}
+                            index={i}
+                            onSelect={(project) => setSelectedProjectId(project.id)}
+                        />
                     ))}
                 </div>
 
+                {/* Lien GitHub */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={inView ? { opacity: 1 } : {}}
@@ -288,6 +376,12 @@ const ProjectsSection = () => {
                 </a>
             </motion.div>
         </div>
+
+        {/* Modale */}
+        <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProjectId(null)}
+        />
 </section>
 )
 }

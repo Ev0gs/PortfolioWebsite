@@ -91,31 +91,66 @@
     "items": {
       "wax": {
         "type": "Mobile Application",
-        "desc": "A mobile vinyl record collection app built for collectors. Search via the Discogs API, barcode scanning, image carousel, tracklist and collection stats."
+        "desc": "A mobile vinyl record collection app built for collectors. Search via the Discogs API, barcode scanning, image carousel, tracklist and collection stats.",
+        "role": "Solo developer — architecture, development, deployment",
+        "longDesc": "WAX is a personal mobile project built for vinyl record collectors, developed with React Native and Expo. It connects to the Discogs API to search for records, scan barcodes, browse image carousels and tracklists, and keep track of collection statistics. The goal was to build a polished, production-ready mobile app from scratch with a focus on UX and real-world data integration.",
+        "h1": "Discogs API integration — search millions of vinyl records, fetch album data, tracklists and cover images in real time",
+        "h2": "Barcode scanning — scan physical vinyl records to instantly identify and add them to the collection",
+        "h3": "Collection stats & image carousel — visual overview of the collection with statistics and browsable cover art"
       },
       "nexusengine": {
         "type": "3D Game Engine",
-        "desc": "Custom C++ game engine built around an ECS architecture with OpenGL 3.3+ rendering, rigid body physics, and a playable survival shooter sample demonstrating the full pipeline."
+        "desc": "Custom C++ game engine built around an ECS architecture with OpenGL 3.3+ rendering, rigid body physics, and a playable survival shooter sample demonstrating the full pipeline.",
+        "role": "Solo developer — architecture, rendering, physics, demo game",
+        "longDesc": "NexusEngine is a personal deep-dive into the internals of a real-time 3D engine. Rather than relying on existing frameworks, the goal was to build every layer from scratch — from the rendering pipeline to the physics simulation — to truly understand what happens under the hood of modern game engines. The project includes a playable survival shooter demo as a full validation of the engine pipeline.",
+        "h1": "Entity-Component System (ECS) — data-oriented architecture for cache efficiency and modularity, with clean separation between entities, components and systems",
+        "h2": "OpenGL 3.3+ renderer — custom pipeline with shader management, VAO/VBO handling, texture loading and a basic lighting model, fully decoupled from game logic",
+        "h3": "Rigid body physics — AABB collision detection, velocity integration and collision response, implemented without any third-party physics library"
       },
       "eokko": {
         "type": "ERP Platform",
-        "desc": "A multi-context ERP developed on Next.js. This product aims to centralize data from multiple businesses in a single platform to facilitate business management."
+        "desc": "A multi-context ERP developed on Next.js. This product aims to centralize data from multiple businesses in a single platform to facilitate business management.",
+        "role": "Fullstack Developer & Tech Lead — Kapsloc (Work-Study)",
+        "longDesc": "Eokko is a next-generation ERP platform designed to centralize data from multiple businesses within a single unified interface. The main challenge was architecting a system capable of supporting multiple company contexts simultaneously while keeping the interface fluid and maintainable. Key modules were designed with a strong focus on UX and real-time collaboration.",
+        "h1": "Real-time Kanban board — multi-user synchronized task management with WebSockets, allowing seamless collaboration across sessions without page refresh",
+        "h2": "Customizable navbar — drag-and-drop reorganization, personal favorites system, and collapsible parent category grouping for each user's workflow",
+        "h3": "Kubernetes deployment — scalable infrastructure with GitLab CI/CD pipeline automating builds, tests and deployments across staging and production environments"
       },
       "timetoplay": {
         "type": "Mobile Game Platform",
-        "desc": "A hypercasual mini-games hub developed on Unity, centralizing mini-games in a single platform with real rewards following competitions between players. Available on Android & iOS."
+        "desc": "A hypercasual mini-games hub developed on Unity, centralizing mini-games in a single platform with real rewards following competitions between players. Available on Android & iOS.",
+        "role": "Project Manager & Unity Developer — Kapsloc (Work-Study)",
+        "longDesc": "TimeToPlay is a mobile platform centralizing several hypercasual mini-games within a single interface. Players compete in short, accessible game sessions and earn real rewards based on competition results. The project was delivered from concept to production on both Android and iOS stores, coordinating a 5-person development team across the full development cycle.",
+        "h1": "Competition system — real-time and score-based competitions between players with dynamic leaderboards and real reward attribution via PlayFab",
+        "h2": "PlayFab integration — complete backend for player accounts, scores, leaderboards and reward management in real time",
+        "h3": "100+ downloads in 3 months — delivered on time with a 5-person team, deployed and maintained on Android (Google Play) and iOS (App Store)"
       },
       "virtuallab": {
         "type": "VR Game",
-        "desc": "A virtual reality game about laboratory experiences made for Meta Quest 2 & 3 on Unity. Complete quests by following the narrator's instructions through immersive lab environments."
+        "desc": "A virtual reality game about laboratory experiences made for Meta Quest 2 & 3 on Unity. Complete quests by following the narrator's instructions through immersive lab environments.",
+        "role": "Solo VR Developer — commissioned by EURL ECVAM (EU Commission)",
+        "longDesc": "Virtual Lab is an educational VR experience commissioned by EURL ECVAM, the European Union's reference laboratory for alternatives to animal testing. Published for free on the Meta Quest Store, the experience targets high school students aged 14-18 and guides them through realistic laboratory experiments via a virtual professor narrator. Available in both VR (Meta Quest 2 & 3) and Desktop (Windows) versions.",
+        "h1": "Commissioned by EURL ECVAM (EU Commission) — official pedagogical tool promoting 3Rs education (Replacement, Reduction, Refinement) and alternatives to animal testing",
+        "h2": "Immersive lab interactions — cell culture, microscopy, automation and chemical assessment with physics-based VR interactions faithful to real laboratory gestures",
+        "h3": "Dual platform — VR standalone version (Meta Quest 2 & 3) and Desktop version (Windows), published for free on the Meta Quest Store"
       },
       "archivizvr": {
         "type": "VR Visualization",
-        "desc": "Realistic architectural visualization in virtual reality developed on Unreal Engine 5.1 for Meta Quest 2, built during an internship at Scissors In The Plug using Blueprints and 3D assets."
+        "desc": "Realistic architectural visualization in virtual reality developed on Unreal Engine 5.1 for Meta Quest 2, built during an internship at Scissors In The Plug using Blueprints and 3D assets.",
+        "role": "Game Programmer (Internship) — Scissors In The Plug",
+        "longDesc": "ArchivizVR is a real-time architectural visualization demo in VR, developed during an internship at Scissors In The Plug, a Bordeaux-based studio specializing in immersive technologies. The main challenge was achieving a high level of visual fidelity — photorealistic materials, dynamic lighting — while meeting the strict performance constraints of Meta Quest 2 standalone hardware.",
+        "h1": "Photoreal standalone VR — high-fidelity architectural environments with PBR materials and dynamic lighting, optimized for Meta Quest 2 without a PC",
+        "h2": "Interactive features in Blueprints & C++ — navigation through architectural spaces, interactive points of interest and scene element manipulation",
+        "h3": "UE5 VR optimization — Lumen adapted for standalone, Nanite disabled, draw call reduction and LOD management to maintain stable framerate on Quest hardware"
       },
       "findux": {
         "type": "Web Monitoring App",
-        "desc": "Real-time monitoring web application built with Django and Vue.js for the metropolis of Bordeaux. Automates application integration via GitLab pipelines and assists the integration & supervision department."
+        "desc": "Real-time monitoring web application built with Django and Vue.js for the metropolis of Bordeaux. Automates application integration via GitLab pipelines and assists the integration & supervision department.",
+        "role": "DevOps Developer (Internship) — Bordeaux Métropole",
+        "longDesc": "FindUX is an internal web application developed for the IT integration and operations department of the Métropole de Bordeaux. Faced with a growing application portfolio and time-consuming manual deployment processes, the goal was to centralize real-time supervision and automate integration pipelines to make production releases more reliable and faster.",
+        "h1": "Real-time monitoring dashboard — Vue.js interface giving operations teams instant visibility over deployment states, alerts and application health indicators",
+        "h2": "GitLab CI/CD automation — pipelines automating build, test and deployment phases, reducing manual interventions and human error risk",
+        "h3": "Ansible automation scripts — Linux infrastructure automation for recurring system administration tasks, saving significant time for the operations team"
       }
     }
   },
