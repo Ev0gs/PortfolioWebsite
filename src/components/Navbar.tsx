@@ -26,9 +26,11 @@ const Navbar = () => {
     ]
 
     const scrollTo = (id: string) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
         setMobileOpen(false)
         window.dispatchEvent(new Event("navclick"))
+        requestAnimationFrame(() => {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+        })
     }
 
     return (
