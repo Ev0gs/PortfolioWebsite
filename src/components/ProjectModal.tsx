@@ -48,6 +48,13 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         return () => { document.body.style.overflow = "" }
     }, [project])
 
+    // Fermeture avec navbar
+    useEffect(() => {
+        const handleNavClick = () => onClose()
+        window.addEventListener("navclick", handleNavClick)
+        return () => window.removeEventListener("navclick", handleNavClick)
+    }, [onClose])
+
     return (
         <AnimatePresence>
             {project && (
