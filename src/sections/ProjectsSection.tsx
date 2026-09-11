@@ -81,7 +81,7 @@ function ProjectCard({ project, delay, index, onSelect }: {
                                 alt={project.title}
                                 className="w-full h-full object-cover transition-transform duration-500"
                                 style={{
-                                    filter: "saturate(0.6) brightness(0.7)",
+                                    filter: "none",
                                     transform: hovered ? "scale(1.05)" : "scale(1)",
                                 }}
                                 loading="lazy"

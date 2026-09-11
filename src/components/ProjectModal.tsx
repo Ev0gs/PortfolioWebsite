@@ -105,7 +105,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                         src={project.image}
                                         alt={project.title}
                                         className="w-full h-full object-cover"
-                                        style={{ filter: "saturate(0.7) brightness(0.75)" }}
+                                        style={{ filter: "none" }}
                                     />
                                     <div
                                         className="absolute inset-0"
