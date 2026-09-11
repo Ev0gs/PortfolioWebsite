@@ -1,6 +1,6 @@
 import {useRef, useState} from "react";
 import {motion, useInView} from "motion/react";
-import {ArrowRight, BookMarked, ExternalLink, Zap} from "lucide-react";
+import {ArrowRight, BookMarked, ExternalLink, Play, Zap} from "lucide-react";
 import SectionLabel from "../components/SectionLabel.tsx";
 import HoloScan from "@/components/HoloScan.tsx";
 import {useTilt} from "@/hooks/useTilt.ts";
@@ -16,7 +16,7 @@ interface Project {
     tagColor: string
     desc: string
     image: string
-    links: { github: string | null; live: string | null }
+    links: { github: string | null; live: string | null; video?: string | null }
     featured: boolean
     // Modal
     longDesc?: string
@@ -163,6 +163,17 @@ function ProjectCard({ project, delay, index, onSelect }: {
                                     <ExternalLink size={14} /> {t("projects.liveDemo")}
                                     </a>
                                     )}
+                                {project.links.video && (
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href={project.links.video}
+                                        className="flex items-center gap-1.5 text-xs transition-colors duration-200 hover:text-[#00D4FF]"
+                                        style={{ color: "#A8B4D4", fontFamily: "'DM Sans', sans-serif" }}
+                                    >
+                                        <Play size={14} /> {t("projects.videoDemo")}
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </HoloScan>
@@ -200,6 +211,26 @@ const ProjectsSection = () => {
             ],
         },
         {
+            id: "portfolio",
+            title: "Portfolio",
+            type: t("projects.items.portfolio.type"),
+            tag: "React / Vite / TailwindCSS",
+            tagColor: "#00D4FF",
+            desc: t("projects.items.portfolio.desc"),
+            image: "/portfolio.png",
+            links: { github: "https://github.com/Ev0gs/PortfolioWebsite", live: "https://pierrelatorse.com" },
+            featured: false,
+            period: "2025 — Present",
+            role: t("projects.items.portfolio.role"),
+            longDesc: t("projects.items.portfolio.longDesc"),
+            stack: ["React", "Vite", "TypeScript", "TailwindCSS", "Motion", "anime.js", "i18next", "EmailJS", "shadcn/ui", "lucide-animated"],
+            highlights: [
+                t("projects.items.portfolio.h1"),
+                t("projects.items.portfolio.h2"),
+                t("projects.items.portfolio.h3"),
+            ],
+        },
+        {
             id: "nexus-engine",
             title: "NexusEngine",
             type: t("projects.items.nexusengine.type"),
@@ -207,7 +238,7 @@ const ProjectsSection = () => {
             tagColor: "#7B2FFF",
             desc: t("projects.items.nexusengine.desc"),
             image: "/nexusengine.png",
-            links: { github: "https://github.com/Ev0gs/NexusEngine", live: null },
+            links: { github: "https://github.com/Ev0gs/NexusEngine", live: null, video: "https://www.dropbox.com/scl/fi/7ojhavpwus1lo7xi9tbvw/NexusEngine_GameplayDemo-2026.mp4?rlkey=qsnowt3m6e9i55ekqvks70o8q&st=1r8qbreq&raw=1" },
             featured: false,
             period: "2024 — Present",
             role: t("projects.items.nexusengine.role"),
@@ -217,6 +248,26 @@ const ProjectsSection = () => {
                 t("projects.items.nexusengine.h1"),
                 t("projects.items.nexusengine.h2"),
                 t("projects.items.nexusengine.h3"),
+            ],
+        },
+        {
+            id: "daimon",
+            title: "Daimon",
+            type: t("projects.items.daimon.type"),
+            tag: "Unity / C#",
+            tagColor: "#FF3B5C",
+            desc: t("projects.items.daimon.desc"),
+            image: "/daimon.png",
+            links: { github: null, live: "https://saizucorp.itch.io/daimon", video: "https://www.dropbox.com/scl/fi/g48ktvmelo3f3j7lplczn/Daimon_Technical_Demo-2024.mp4?rlkey=thzkue7m6vbitge51pm9vbk54&st=iwiin13c&raw=1" },
+            featured: false,
+            period: "2025 — Present",
+            role: t("projects.items.daimon.role"),
+            longDesc: t("projects.items.daimon.longDesc"),
+            stack: ["Unity", "C#", "Git"],
+            highlights: [
+                t("projects.items.daimon.h1"),
+                t("projects.items.daimon.h2"),
+                t("projects.items.daimon.h3"),
             ],
         },
         {
@@ -247,7 +298,7 @@ const ProjectsSection = () => {
             tagColor: "#00FF9C",
             desc: t("projects.items.timetoplay.desc"),
             image: "/timetoplay.png",
-            links: { github: null, live: "https://www.time-to-play.fr/" },
+            links: { github: null, live: "https://www.time-to-play.fr/", video: "https://www.dropbox.com/scl/fi/bt6fccicxbby1a2y5532k/TimeToPlay_Demo-2025.mp4?rlkey=rgvstpw1uqv9d2acqeq2fpp9b&st=l8jsbqvw&raw=1"},
             featured: false,
             period: "2024 — 2025",
             role: t("projects.items.timetoplay.role"),
@@ -267,7 +318,7 @@ const ProjectsSection = () => {
             tagColor: "#FFB800",
             desc: t("projects.items.virtuallab.desc"),
             image: "/virtuallab.png",
-            links: { github: null, live: null },
+            links: { github: null, live: null, video: "https://www.dropbox.com/scl/fi/72d6aytxvk4ugaqrw3m2w/Virtual-Lab-0.6.7-2024.mp4?rlkey=vmvu8ew5h1x1r7twxca2t3fqs&st=gtutq0ic&raw=1"},
             featured: false,
             period: "2024",
             role: t("projects.items.virtuallab.role"),

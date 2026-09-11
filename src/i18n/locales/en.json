@@ -87,6 +87,7 @@
     "viewAll": "View all projects on GitHub",
     "source": "Source",
     "liveDemo": "Website",
+    "videoDemo": "Watch Demo",
     "featured": "featured",
     "items": {
       "wax": {
@@ -98,6 +99,15 @@
         "h2": "Barcode scanning — scan physical vinyl records to instantly identify and add them to the collection",
         "h3": "Collection stats & image carousel — visual overview of the collection with statistics and browsable cover art"
       },
+      "portfolio": {
+        "type": "Portfolio Website",
+        "desc": "Personal freelance portfolio built with React, Vite and TailwindCSS — featuring holographic UI effects, scramble text animations, 3D card tilt, real-time i18n and a working contact form.",
+        "role": "Solo developer — design, development, SEO, deployment",
+        "longDesc": "This portfolio was built from scratch to showcase my projects and freelance services. Every visual detail was crafted intentionally — from the holographic scan effects and holo cubes, to the scramble text typing effect powered by anime.js, the 3D card tilt on hover, and the animated navbar underline. The site is fully bilingual (EN/FR) with real-time language switching via i18next, and includes a working contact form via EmailJS.",
+        "h1": "Holographic UI system — custom HoloScan, HoloCube and holo label components with Motion animations, scanlines and glow effects consistent across all sections",
+        "h2": "Scramble text typing effect — anime.js scrambleText plugin animating role titles in the hero section with configurable cursor and reveal speed",
+        "h3": "Bilingual i18n — full EN/FR translation with real-time language switching via i18next, auto-detecting browser language on first load"
+      },
       "nexusengine": {
         "type": "3D Game Engine",
         "desc": "Custom C++ game engine built around an ECS architecture with OpenGL 3.3+ rendering, rigid body physics, and a playable survival shooter sample demonstrating the full pipeline.",
@@ -106,6 +116,15 @@
         "h1": "Entity-Component System (ECS) — data-oriented architecture for cache efficiency and modularity, with clean separation between entities, components and systems",
         "h2": "OpenGL 3.3+ renderer — custom pipeline with shader management, VAO/VBO handling, texture loading and a basic lighting model, fully decoupled from game logic",
         "h3": "Rigid body physics — AABB collision detection, velocity integration and collision response, implemented without any third-party physics library"
+      },
+      "daimon": {
+        "type": "Indie Game",
+        "desc": "An independent 2D action game developed solo since 2025 in Unity/C#. Full ownership of game architecture, gameplay programming, combat mechanics and UI/UX.",
+        "role": "Solo developer — architecture, gameplay, UI/UX, technical direction",
+        "longDesc": "Daimon is an independent 2D action game developed solo since January 2025, after an initial prototype phase used to learn Unity's fundamentals. This is a personal creative and technical challenge: designing, building and shipping a complete game from scratch, on my own terms. Artwork and visual assets are sourced externally — everything else is handled solo.",
+        "h1": "Gameplay programming — player controller, combat mechanics, enemy behaviours and interactions designed and implemented from scratch",
+        "h2": "Game architecture — overall system structure, scene management, game loop and technical direction handled end to end",
+        "h3": "Active development — a first playable demo was released during the early learning phase; the project has since grown significantly in scope and quality"
       },
       "eokko": {
         "type": "ERP Platform",

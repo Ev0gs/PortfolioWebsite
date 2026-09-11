@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react"
-import { X, ExternalLink, BookMarked } from "lucide-react"
+import {X, ExternalLink, BookMarked, Play} from "lucide-react"
 import { useEffect } from "react"
 import HoloScan from "./HoloScan"
 import { useTranslation } from "react-i18next"
@@ -12,7 +12,7 @@ export interface Project {
     tagColor: string
     desc: string
     image: string
-    links: { github: string | null; live: string | null }
+    links: { github: string | null; live: string | null; video?: string | null }
     featured: boolean
     longDesc?: string
     stack?: string[]
@@ -276,6 +276,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
                                     {/* Liens */}
                                     <div className="flex gap-4 pt-2">
+                                        {/* Github */}
                                         {project.links.github && (
                                             <a
                                             href={project.links.github}
@@ -295,6 +296,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                             <BookMarked size={15} /> {t("projects.source")}
                                             </a>
                                             )}
+                                        {/* Website */}
                                         {project.links.live && (
                                             <a
                                             href={project.links.live}
@@ -312,6 +314,25 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1" }}
                                             >
                                             <ExternalLink size={15} /> {t("projects.liveDemo")}
+                                            </a>
+                                            )}
+                                        {project.links.video && (
+                                        <a
+                                            href={project.links.video}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-all duration-200 cursor-pointer"
+                                            style={{
+                                            border: `1px solid rgba(255,255,255,0.15)`,
+                                            color: "#E2E8F8",
+                                            borderRadius: "4px",
+                                            fontFamily: "'Rajdhani', sans-serif",
+                                            letterSpacing: "0.08em",
+                                        }}
+                                            onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)" }}
+                                            onMouseLeave={(e) => { e.currentTarget.style.background = "transparent" }}
+                                            >
+                                            <Play size={15} /> {t("projects.videoDemo")}
                                             </a>
                                             )}
                                     </div>
