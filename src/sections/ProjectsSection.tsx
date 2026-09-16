@@ -198,7 +198,7 @@ const ProjectsSection = () => {
             tagColor: "#F5A623",
             desc: t("projects.items.wax.desc"),
             image: "/wax.png",
-            links: { github: "https://github.com/Ev0gs/WaxApp", live: null },
+            links: { github: "https://github.com/Ev0gs/WaxApp", live: null, video: "https://www.youtube.com/watch?v=hmVu1ZA6Qug&list=PLfh00zXjTSXo&index=6" },
             featured: false,
             period: "2025 — Present",
             role: t("projects.items.wax.role"),
