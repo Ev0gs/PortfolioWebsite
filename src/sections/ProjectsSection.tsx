@@ -278,7 +278,7 @@ const ProjectsSection = () => {
             tagColor: "#00D4FF",
             desc: t("projects.items.eokko.desc"),
             image: "/eokko.png",
-            links: { github: null, live: "https://eokko.com" },
+            links: { github: null, live: "https://erp.kapsloc.com/" },
             featured: false,
             period: "2024 — 2025",
             role: t("projects.items.eokko.role"),
